@@ -1871,7 +1871,7 @@ GameObject:
   - component: {fileID: 707905608}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: slider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4956,9 +4956,9 @@ SceneRoots:
   - {fileID: 1492714045}
   - {fileID: 1698080037}
   - {fileID: 1143437579}
-  - {fileID: 94447622}
   - {fileID: 417545828}
   - {fileID: 2094594992}
+  - {fileID: 94447622}
   - {fileID: 1991700015}
   - {fileID: 846958561}
   - {fileID: 2132348741}
