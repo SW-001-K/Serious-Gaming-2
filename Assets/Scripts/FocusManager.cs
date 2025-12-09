@@ -6,6 +6,7 @@ public class FocusManager : MonoBehaviour
 
     public float maxFocus = 100f;
     public float currFocus;
+    public float drainRate = 1f;
 
     void Awake()
     {
@@ -25,7 +26,8 @@ public class FocusManager : MonoBehaviour
     {
         if (currFocus > 0)
         {
-            currFocus -= Time.deltaTime;
+            currFocus -= drainRate* Time.deltaTime;
         }
+
     }
 }
