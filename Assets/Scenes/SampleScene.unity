@@ -2422,6 +2422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneInteract
   sceneLoad: Phone
+  playerCamera: {fileID: 0}
 --- !u!64 &950927988
 MeshCollider:
   m_ObjectHideFlags: 0
