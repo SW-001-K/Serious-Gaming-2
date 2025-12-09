@@ -6,24 +6,19 @@ using System.Collections.Generic;
 public class FocusBar : MonoBehaviour
 {   
     public Slider focusBarSlider;
-    public int maxFocus;
-    public int currFocus;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        currFocus = maxFocus; 
-        focusBarSlider.value = currFocus;
-        focusBarSlider.maxValue = maxFocus; 
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void SetMaxFocus(float focus)
     {
         
-        focusBarSlider.value = currFocus;
-        focusBarSlider.maxValue = maxFocus; 
-        
-
+        focusBarSlider.maxValue = focus;
+        focusBarSlider.value = focus; 
 
     }
+
+    public void SetFocus(float focus)
+    {
+        focusBarSlider.value = focus;
+
+    }
+
 }
