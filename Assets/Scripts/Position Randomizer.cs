@@ -8,6 +8,12 @@ public class PositionRandomizer : MonoBehaviour
     private void Start() {
         Randomize();
     }
+
+    //  private void Update()
+    // {
+    //     Randomize();
+
+    // }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Randomize()
     {

@@ -11,6 +11,12 @@ public class StringRandomizer : MonoBehaviour
         pickRandomFromList();
 
     }
+
+    // private void Update()
+    // {
+    //     pickRandomFromList();
+
+    // }
     public void pickRandomFromList()
     {
         string[ ] messages = { 
@@ -18,7 +24,14 @@ public class StringRandomizer : MonoBehaviour
         "Mitochondria is the powerhouse of the cell",
         "Pak Galih Dea is the best",
         "Serious game is a serious game",
-        "Awesome!",
+        "A serious game or applied game is a game designed for a primary purpose other than pure entertainment.",
+        "The platypus can lay eggs despite being a mammal",
+        "Why am I programming?",
+        "ADHD stands for attention deficit hyperactivity disorder",
+        "Random string string string",
+        "Is this the real life, or is this fantasy",
+        "Akhirnya diimplement woi",
+        "Look at whiteboard event done!",
         
         
         };
