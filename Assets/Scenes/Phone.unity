@@ -1538,13 +1538,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoomScroll
   videoPlayer: {fileID: 1794482585}
   clips:
+  - {fileID: 32900000, guid: 7d0bb6c798b1e024ab0f7aa90b78e4b0, type: 3}
   - {fileID: 32900000, guid: 39d7c9f48db3cea488c516446a8925f6, type: 3}
+  - {fileID: 32900000, guid: 752453f0e7e6919458895c99ccad5d1f, type: 3}
+  - {fileID: 32900000, guid: e18cb56bcff676c43ac500c5b01bd3d3, type: 3}
   - {fileID: 32900000, guid: 2fe69048d2884014bb20a53129637339, type: 3}
-  - {fileID: 32900000, guid: 2fcd02e186395e748b380c47eede4413, type: 3}
   - {fileID: 32900000, guid: 20de40aa9a636c543af98d4e15eb0837, type: 3}
   - {fileID: 32900000, guid: adcc5832be328f74db8dd114d86165d7, type: 3}
   - {fileID: 32900000, guid: 4af36d7e906e20341822653c662f72df, type: 3}
   - {fileID: 32900000, guid: aa2913aecd7334849a477651e98dcd2d, type: 3}
+  - {fileID: 32900000, guid: bf1745fd40ae9674d9f25c851ac77ac9, type: 3}
+  - {fileID: 32900000, guid: 9978ef555e915df4995a300a452e9ff3, type: 3}
+  - {fileID: 32900000, guid: 7add836430d6dcb4b86907815f700a00, type: 3}
+  - {fileID: 32900000, guid: a2ef2b8e4b7000e4c923ccb24fa92086, type: 3}
+  - {fileID: 32900000, guid: 52c1ae1318ef26444b3cd1fc28cfd0b3, type: 3}
+  - {fileID: 32900000, guid: 2fcd02e186395e748b380c47eede4413, type: 3}
+  - {fileID: 32900000, guid: 368db6e8efe16a2429c39af9c4ff9b0d, type: 3}
+  - {fileID: 32900000, guid: a1ba6a5b3b4781e4caab63b86195a203, type: 3}
 --- !u!1001 &486475380
 PrefabInstance:
   m_ObjectHideFlags: 0
