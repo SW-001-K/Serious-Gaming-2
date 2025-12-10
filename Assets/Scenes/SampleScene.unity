@@ -1840,7 +1840,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -27.958496, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3099,7 +3099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20610e11fe3a40408e5e32730f0e5af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PositionRandomizer
-  startPos: {x: 2.78, y: 2.12}
+  startPos: {x: 2.78, y: 3.5}
   endPos: {x: -7.18, y: 5.02}
 --- !u!95 &1097185228
 Animator:
