@@ -1,5 +1,3 @@
-
-
 using UnityEngine;
 
 public class WhiteboardVisible : MonoBehaviour
@@ -37,10 +35,12 @@ public class WhiteboardVisible : MonoBehaviour
     // }
 
     void OnBecameVisible()
-    {   
+    {
+        
         drainRate = 0.01f; 
         FocusManager.Instance.drainRate = drainRate;
         Debug.Log("Object is visible" + drainRate);
+
 
     }
 
