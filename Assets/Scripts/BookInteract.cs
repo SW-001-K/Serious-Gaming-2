@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PhoneInteract : MonoBehaviour, IInteractable
+public class BookInteract : MonoBehaviour, IInteractable
 {
     public void OnInteract()
     {
@@ -9,10 +9,10 @@ public class PhoneInteract : MonoBehaviour, IInteractable
         if (player != null)
             player.SetActive(false);
 
-        Debug.Log("Phone interacted");
+        Debug.Log("Book interacted");
         SceneManager.LoadScene(sceneLoad);
     }
 
-    public string sceneLoad = "Phone";
+    public string sceneLoad = "Book";
 
 }
