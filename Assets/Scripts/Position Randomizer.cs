@@ -5,7 +5,8 @@ public class PositionRandomizer : MonoBehaviour
     [SerializeField] private Vector2 startPos;
     [SerializeField] private Vector2 endPos;
 
-    private void Start() {
+    private void Start() 
+    { 
         Randomize();
     }
 
@@ -16,7 +17,7 @@ public class PositionRandomizer : MonoBehaviour
     // }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Randomize()
-    {
+    {   
         float newX = Random.Range(startPos.x, endPos.x);
         float newY = Random.Range(startPos.y, endPos.y);
 
