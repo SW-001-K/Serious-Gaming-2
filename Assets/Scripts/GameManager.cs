@@ -3,31 +3,37 @@ using UnityEngine.SceneManagement; // Required for scene management
 using TMPro; // Required for TextMeshPro UI elements
 
 public class GameManager : MonoBehaviour
-{
-    public GameObject gameOverPanel; 
+{   public static GameManager Instance;
+    public GameOverScreen gameOverScreen; 
     public bool isGameActive; 
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
         isGameActive = true;
-        gameOverPanel.SetActive(false);
+        gameOverScreen.Setup(false);
     }
 
 
     public void GameOver()
     {
         isGameActive = false;
-        gameOverPanel.SetActive(true); 
-        // Optional: Stop time when game over
-        // Time.timeScale = 0f; 
+        gameOverScreen.Setup(true); 
+ 
     }
 
- 
     public void RestartGame()
     {
-        // Reloads the current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
-        // If Time.timeScale was set to 0f, uncomment the next line:
-        // Time.timeScale = 1f;
+
     }
 }

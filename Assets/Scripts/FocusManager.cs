@@ -28,6 +28,11 @@ public class FocusManager : MonoBehaviour
         {
             currFocus -= drainRate* Time.deltaTime;
         }
-
+        
+        if (currFocus <= 0)
+        {
+            currFocus = 0;
+            GameManager.Instance.GameOver();
+        }
     }
 }
