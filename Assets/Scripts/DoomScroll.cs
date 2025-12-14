@@ -11,6 +11,7 @@ public class DoomScroll : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Debug.Log(Camera.main);
         PlayClip(currentIndex);
         FocusManager.Instance.drainRate = drainRate;
         
@@ -37,6 +38,9 @@ public class DoomScroll : MonoBehaviour
             currentIndex = 0; // loop back to first
 
         PlayClip(currentIndex);
+
+        if (FocusManager.Instance != null)
+            FocusManager.Instance.drainRate = drainRate;
     }
 
     void PreviousVideo()
