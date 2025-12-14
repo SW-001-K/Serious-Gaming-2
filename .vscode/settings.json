@@ -59,9 +59,9 @@
     },
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.patterns": {
-        "*.sln": "*.csproj",
-        "*.slnx": "*.csproj"
+        "*.sln": "*.csproj"
     },
-    "=======>>>>>>>parentofd0eb0c6(Mergebranch'bay'intoKenny-workspace)dotnet.defaultSolution": "My project (1).slnx",
+    "<<<<<<<HEAD=======>>>>>>>parentofd0eb0c6(Mergebranch'bay'intoKenny-workspace)dotnet.defaultSolution": "My project (1).slnx",
+    "My project (1).slnx=======dotnet.defaultSolution": "lilbro.slnx>>>>>>>parentof5cb2ad1(test)",
     "dotnet.defaultSolution": "My project (1).slnx"
 }
