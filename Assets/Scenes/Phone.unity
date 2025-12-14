@@ -944,8 +944,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d67ceb112e6984d85f8428888e9f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  maxFocus: 100
-  currFocus: 0
   focusBar: {fileID: 0}
 --- !u!1001 &368470156
 PrefabInstance:
@@ -1438,14 +1436,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463094035}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.008357954, y: 0.76250196, z: 0.0032002623, w: 0.6469241}
-  m_LocalPosition: {x: -0.002201, y: -0.000176, z: 0.005637}
+  m_LocalRotation: {x: -0.0028930604, y: 0.7661671, z: -0.0029824376, w: 0.6426281}
+  m_LocalPosition: {x: -0.00085, y: -0.00015, z: 0.00542}
   m_LocalScale: {x: 0.009782679, y: 0.022000546, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1794482584}
   m_Father: {fileID: 2028008025}
-  m_LocalEulerAnglesHint: {x: -0.899, y: 99.38, z: -0.493}
+  m_LocalEulerAnglesHint: {x: 0.049, y: 100.023, z: -0.474}
 --- !u!64 &463094037
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1555,6 +1553,7 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 2fcd02e186395e748b380c47eede4413, type: 3}
   - {fileID: 32900000, guid: 368db6e8efe16a2429c39af9c4ff9b0d, type: 3}
   - {fileID: 32900000, guid: a1ba6a5b3b4781e4caab63b86195a203, type: 3}
+  drainRate: 10
 --- !u!1001 &486475380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1841,6 +1840,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31dbd4c837c3a5b4d8ada46d34b4e7cd, type: 3}
+--- !u!1 &792590379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 792590381}
+  - component: {fileID: 792590380}
+  m_Layer: 0
+  m_Name: FocusManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &792590380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792590379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae25172e4b5f0f4daae411600198c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FocusManager
+  maxFocus: 100
+  currFocus: 0
+  drainRate: 1
+--- !u!4 &792590381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792590379}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.79382, y: 0.01241, z: -4.39239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &804244693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7cf85a32771224d4a9569f89a0a55daa, type: 3}
@@ -4708,3 +4754,4 @@ SceneRoots:
   - {fileID: 983516262}
   - {fileID: 2003831935}
   - {fileID: 1870391949}
+  - {fileID: 792590381}
