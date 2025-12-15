@@ -18,16 +18,11 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = false;
         gameOverPanel.SetActive(true); 
-        // Optional: Stop time when game over
-        // Time.timeScale = 0f; 
     }
 
  
     public void RestartGame()
     {
-        // Reloads the current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
-        // If Time.timeScale was set to 0f, uncomment the next line:
-        // Time.timeScale = 1f;
     }
 }

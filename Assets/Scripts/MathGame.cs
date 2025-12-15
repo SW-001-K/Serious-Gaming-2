@@ -83,27 +83,48 @@ public class MathGame : MonoBehaviour
     }
 
     //TO DO : discuss add focus w kenny
-    //public void CheckAnswer()
-    //{
-    //    if (answerInput.text == correctAnswer.ToString())
-    //    {
-    //        Debug.Log("Correct!");
-    //        questionsSolved++;
+    public void CheckAnswer()
+    {
+        if (string.IsNullOrEmpty(answerInput.text))
+            return;
 
-    //        FocusManager.Instance.AddFocus(20);
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("Wrong!");
-    //        FocusManager.Instance.AddFocus(-10);
-    //    }
+        if (answerInput.text == correctAnswer.ToString())
+        {
+            Debug.Log("Correct!");
+            questionsSolved++;
 
-    //    answerInput.text = "";
-    //    GenerateQuestion();
-    //}
+            if (FocusManager.Instance != null)
+            {
+                FocusManager.Instance.drainRate = -20f;
+            }
+            else
+            {
+                Debug.LogWarning("FocusManager.Instance is NULL");
+            }
+        }
+        else
+        {
+            Debug.Log("Wrong!");
+
+            if (FocusManager.Instance != null)
+            {
+                FocusManager.Instance.drainRate = 10f;
+            }
+        }
+
+        answerInput.text = "";
+        answerInput.ActivateInputField(); 
+        GenerateQuestion();
+    }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            CheckAnswer();
+        }
+
+        // Exit math scene
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("SampleScene");
