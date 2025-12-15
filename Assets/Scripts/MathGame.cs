@@ -14,6 +14,13 @@ public class MathGame : MonoBehaviour
 
     void Start()
     {
+     
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+       
+        answerInput.ActivateInputField();
+
         GenerateQuestion();
     }
 

@@ -2,9 +2,7 @@
     "files.exclude": {
         "**/.DS_Store": true,
         "**/.git": true,
-        "**/.vs": true,
         "**/.gitmodules": true,
-        "**/.vsconfig": true,
         "**/*.booproj": true,
         "**/*.pidb": true,
         "**/*.suo": true,
@@ -49,14 +47,11 @@
         "library/": true,
         "obj/": true,
         "Obj/": true,
-        "Logs/": true,
-        "logs/": true,
         "ProjectSettings/": true,
-        "UserSettings/": true,
         "temp/": true,
         "Temp/": true
     },
-    "files.associations": {
+    "<<<<<<<HEADfiles.associations": {
         "*.asset": "yaml",
         "*.meta": "yaml",
         "*.prefab": "yaml",
@@ -66,5 +61,7 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "lilbro.slnx"
+    "<<<<<<<HEAD=======>>>>>>>parentofd0eb0c6(Mergebranch'bay'intoKenny-workspace)dotnet.defaultSolution": "My project (1).slnx",
+    "My project (1).slnx=======dotnet.defaultSolution": "lilbro.slnx>>>>>>>parentof5cb2ad1(test)",
+    "dotnet.defaultSolution": "My project (1).slnx"
 }
