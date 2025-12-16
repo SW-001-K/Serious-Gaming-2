@@ -6,21 +6,19 @@ public class MathGame : MonoBehaviour
 {
     public TMP_Text questionText;
     public TMP_InputField answerInput;
-    public float drainRate = 1f;
+    public float drainRate = 5f;
 
     int correctAnswer;
     int difficulty = 1;
     int questionsSolved = 0;
 
-    void Start()
+    void OnEnable()
     {
-     
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-       
-        answerInput.ActivateInputField();
-
+        if (FocusManager.Instance != null)
+        FocusManager.Instance.drainRate = drainRate;
+    }
+    void Start()
+    {      
         GenerateQuestion();
     }
 
@@ -59,7 +57,7 @@ public class MathGame : MonoBehaviour
             a = Random.Range(2, 12);
             b = Random.Range(2, 12);
             correctAnswer = a * b;
-            questionText.text = $"{a} × {b} = ?";
+            questionText.text = $"{a} ï¿½ {b} = ?";
         }
         else
         {
@@ -81,7 +79,7 @@ public class MathGame : MonoBehaviour
 
                 case 2: 
                     correctAnswer = a * b;
-                    questionText.text = $"{a} × {b} = ?";
+                    questionText.text = $"{a} ï¿½ {b} = ?";
                     break;
             }
         }
