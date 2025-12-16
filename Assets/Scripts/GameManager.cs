@@ -1,14 +1,16 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Required for scene management
-using TMPro; // Required for TextMeshPro UI elements
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
-{   public static GameManager Instance;
-    public GameOverScreen gameOverScreen; 
-    public bool isGameActive; 
+{
+    public static GameManager Instance;
+
+    bool isGameActive;
+    public GameOverScreen gameOverScreen;
+
     void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
@@ -16,24 +18,36 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-    }
-    void Start()
-    {
-        isGameActive = true;
-        gameOverScreen.Setup(false);
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+      void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        
+        gameOverScreen =  FindFirstObjectByType<GameOverScreen>();
+        isGameActive = true;
+
+        if (gameOverScreen != null)
+            gameOverScreen.Setup(false);
+    }
 
     public void GameOver()
     {
+        if (!isGameActive) return;
         isGameActive = false;
-        gameOverScreen.Setup(true); 
- 
+
+        if (gameOverScreen != null)
+            gameOverScreen.Setup(true);
     }
 
-    public void RestartGame()
+    public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
