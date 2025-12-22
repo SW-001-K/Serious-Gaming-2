@@ -3,11 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class Back : MonoBehaviour
 {
+    public string sceneLoad = "SampleScene";
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadSceneAsync("SampleScene");
+            SceneManager.LoadScene(sceneLoad);
         }
     }
 }
