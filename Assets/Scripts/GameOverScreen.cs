@@ -20,6 +20,7 @@ public class GameOverScreen : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+        
         gameObject.SetActive(show);
     }
 
@@ -29,9 +30,9 @@ public class GameOverScreen : MonoBehaviour
 
     }
 
-    public void ExitButton()
+    public void MainMenuButton()
     {
    
-       GameManager.Instance.Restart();
+       GameManager.Instance.MainMenu();
     }
 }

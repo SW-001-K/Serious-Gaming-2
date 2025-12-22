@@ -28,6 +28,11 @@ public class FocusManager : MonoBehaviour
         {
             currFocus -= drainRate* Time.deltaTime;
         }
+
+        if (currFocus > 100)
+        {
+            currFocus = maxFocus;
+        }
         
         if (currFocus <= 0)
         {
@@ -35,4 +40,11 @@ public class FocusManager : MonoBehaviour
             GameManager.Instance.GameOver();
         }
     }
+
+      public void ResetFocus()
+    {
+        currFocus = maxFocus;
+        drainRate = 1f;
+    }
+
 }
