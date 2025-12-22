@@ -38,7 +38,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver()
-    {
+    {   
+        Time.timeScale = 0f;
+        
         if (!isGameActive) return;
         isGameActive = false;
 
@@ -47,7 +49,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void Restart()
-    {
+    {   
+        Time.timeScale = 1f;
+        if (gameOverScreen != null)
+            gameOverScreen.Setup(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
