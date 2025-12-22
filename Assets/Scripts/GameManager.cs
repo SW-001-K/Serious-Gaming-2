@@ -1,33 +1,86 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Required for scene management
-using TMPro; // Required for TextMeshPro UI elements
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject gameOverPanel; 
-    public bool isGameActive; 
+    public static GameManager Instance;
 
-    void Start()
+    bool isGameActive;
+    public GameOverScreen gameOverScreen;
+
+    void Awake()
     {
-        isGameActive = true;
-        gameOverPanel.SetActive(false);
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+      void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        
+        gameOverScreen =  FindFirstObjectByType<GameOverScreen>();
+        isGameActive = true;
+
+        if (gameOverScreen != null)
+            gameOverScreen.Setup(false);
+    }
 
     public void GameOver()
-    {
+    {   
+        Time.timeScale = 0f;
+        
+        if (!isGameActive) return;
         isGameActive = false;
-        gameOverPanel.SetActive(true); 
-        // Optional: Stop time when game over
-        // Time.timeScale = 0f; 
+
+        if (gameOverScreen != null)
+            gameOverScreen.Setup(true);
     }
 
- 
-    public void RestartGame()
-    {
-        // Reloads the current scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
-        // If Time.timeScale was set to 0f, uncomment the next line:
-        // Time.timeScale = 1f;
+    public void Restart()
+    {   
+        
+        Time.timeScale = 1f;
+        var audios = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+
+        foreach (var a in audios)
+        Destroy(a.gameObject);
+
+        if (FocusManager.Instance != null)
+            FocusManager.Instance.ResetFocus();
+
+        if (gameOverScreen != null)
+            gameOverScreen.Setup(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+      public void MainMenu()
+    {   
+        Time.timeScale = 1f;
+
+        var audios = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (var a in audios)
+        Destroy(a.gameObject);
+        
+        if (FocusManager.Instance != null)
+            FocusManager.Instance.ResetFocus();
+
+        if (gameOverScreen != null)
+            gameOverScreen.Setup(false);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        SceneManager.LoadScene("Main Menu");
     }
 }
