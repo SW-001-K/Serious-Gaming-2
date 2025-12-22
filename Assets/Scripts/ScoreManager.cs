@@ -23,4 +23,9 @@ public class ScoreManager : MonoBehaviour
             currScore = 0; 
         }
 
+
+    public void ResetScore()
+    {
+        currScore = 0;
+    }
 }

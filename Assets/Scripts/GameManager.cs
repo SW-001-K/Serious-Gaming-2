@@ -38,7 +38,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver()
-    {
+    {   
+        Time.timeScale = 0f;
+        
         if (!isGameActive) return;
         isGameActive = false;
 
@@ -47,7 +49,38 @@ public class GameManager : MonoBehaviour
     }
 
     public void Restart()
-    {
+    {   
+        
+        Time.timeScale = 1f;
+        var audios = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+
+        foreach (var a in audios)
+        Destroy(a.gameObject);
+
+        if (FocusManager.Instance != null)
+            FocusManager.Instance.ResetFocus();
+
+        if (gameOverScreen != null)
+            gameOverScreen.Setup(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+      public void MainMenu()
+    {   
+        Time.timeScale = 1f;
+
+        var audios = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (var a in audios)
+        Destroy(a.gameObject);
+        
+        if (FocusManager.Instance != null)
+            FocusManager.Instance.ResetFocus();
+
+        if (gameOverScreen != null)
+            gameOverScreen.Setup(false);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        SceneManager.LoadScene("Main Menu");
     }
 }
