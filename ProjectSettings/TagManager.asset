@@ -5,8 +5,6 @@ TagManager:
   serializedVersion: 3
   tags:
   - slider
-  - gazeGame
-  - Focus Anchor
   layers:
   - Default
   - TransparentFX
