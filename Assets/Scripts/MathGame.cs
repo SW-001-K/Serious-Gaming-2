@@ -18,7 +18,12 @@ public class MathGame : MonoBehaviour
         FocusManager.Instance.drainRate = drainRate;
     }
     void Start()
-    {      
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        answerInput.ActivateInputField(); 
+
         GenerateQuestion();
     }
 
@@ -57,7 +62,7 @@ public class MathGame : MonoBehaviour
             a = Random.Range(2, 12);
             b = Random.Range(2, 12);
             correctAnswer = a * b;
-            questionText.text = $"{a} � {b} = ?";
+            questionText.text = $"{a} x {b} = ?";
         }
         else
         {
@@ -79,7 +84,7 @@ public class MathGame : MonoBehaviour
 
                 case 2: 
                     correctAnswer = a * b;
-                    questionText.text = $"{a} � {b} = ?";
+                    questionText.text = $"{a} x {b} = ?";
                     break;
             }
         }
@@ -87,7 +92,7 @@ public class MathGame : MonoBehaviour
         Debug.Log($"Difficulty: {difficulty}, Question #{questionsSolved}");
     }
 
-    //TO DO : discuss add focus w kenny
+
     public void CheckAnswer()
     {
         if (string.IsNullOrEmpty(answerInput.text))
