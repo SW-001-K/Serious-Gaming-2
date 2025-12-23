@@ -6,7 +6,7 @@ public class DoomScroll : MonoBehaviour
     public VideoPlayer videoPlayer;
     public VideoClip[] clips;   
     private int currentIndex = 0;
-    public float drainRate = 10f;
+    public float drainRate = 2.5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,6 +14,7 @@ public class DoomScroll : MonoBehaviour
         Debug.Log(Camera.main);
         PlayClip(currentIndex);
         FocusManager.Instance.drainRate = drainRate;
+        ScoreManager.Instance.currScore -= 5* Time.deltaTime; 
         
     }
 

@@ -40,6 +40,7 @@ public class WhiteboardVisible : MonoBehaviour
         drainRate = 1f; 
         FocusManager.Instance.drainRate = drainRate;
         Debug.Log("Object is visible" + drainRate);
+        ScoreManager.Instance.currScore += 10* Time.deltaTime; 
 
 
     }

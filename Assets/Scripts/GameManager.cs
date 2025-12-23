@@ -60,9 +60,15 @@ public class GameManager : MonoBehaviour
         if (FocusManager.Instance != null)
             FocusManager.Instance.ResetFocus();
 
+        if (Timekeeper.Instance != null)
+            Timekeeper.Instance.ResetTimer();
+
+        if (ScoreManager.Instance !=null)
+            ScoreManager.Instance.ResetScore();
+        
         if (gameOverScreen != null)
             gameOverScreen.Setup(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("SampleScene");
     }
 
       public void MainMenu()
@@ -76,8 +82,16 @@ public class GameManager : MonoBehaviour
         if (FocusManager.Instance != null)
             FocusManager.Instance.ResetFocus();
 
+            
+        if (Timekeeper.Instance != null)
+            Timekeeper.Instance.StopTimer();
+        
+
         if (gameOverScreen != null)
             gameOverScreen.Setup(false);
+
+        if (ScoreManager.Instance !=null)
+            ScoreManager.Instance.ResetScore();
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

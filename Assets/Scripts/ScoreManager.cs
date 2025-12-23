@@ -5,8 +5,6 @@ public class ScoreManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public static ScoreManager Instance;
-
-        public float maxScore = 100f;
         public float currScore;
 
         void Awake()
