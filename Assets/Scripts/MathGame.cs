@@ -6,7 +6,7 @@ public class MathGame : MonoBehaviour
 {
     public TMP_Text questionText;
     public TMP_InputField answerInput;
-    public float drainRate = 5f;
+    public float drainRate = 1f;
 
     int correctAnswer;
     int difficulty = 1;
@@ -18,7 +18,12 @@ public class MathGame : MonoBehaviour
         FocusManager.Instance.drainRate = drainRate;
     }
     void Start()
-    {      
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        answerInput.ActivateInputField(); 
+
         GenerateQuestion();
     }
 
@@ -57,7 +62,7 @@ public class MathGame : MonoBehaviour
             a = Random.Range(2, 12);
             b = Random.Range(2, 12);
             correctAnswer = a * b;
-            questionText.text = $"{a} � {b} = ?";
+            questionText.text = $"{a} x {b} = ?";
         }
         else
         {
@@ -79,7 +84,7 @@ public class MathGame : MonoBehaviour
 
                 case 2: 
                     correctAnswer = a * b;
-                    questionText.text = $"{a} � {b} = ?";
+                    questionText.text = $"{a} x {b} = ?";
                     break;
             }
         }
@@ -87,7 +92,7 @@ public class MathGame : MonoBehaviour
         Debug.Log($"Difficulty: {difficulty}, Question #{questionsSolved}");
     }
 
-    //TO DO : discuss add focus w kenny
+
     public void CheckAnswer()
     {
         if (string.IsNullOrEmpty(answerInput.text))
@@ -97,10 +102,11 @@ public class MathGame : MonoBehaviour
         {
             Debug.Log("Correct!");
             questionsSolved++;
+            ScoreManager.Instance.currScore += 50; 
 
             if (FocusManager.Instance != null)
             {
-                FocusManager.Instance.drainRate = -20f;
+                FocusManager.Instance.drainRate = -10f;
             }
             else
             {
@@ -114,6 +120,7 @@ public class MathGame : MonoBehaviour
             if (FocusManager.Instance != null)
             {
                 FocusManager.Instance.drainRate = 10f;
+                ScoreManager.Instance.currScore -= 10; 
             }
         }
 
